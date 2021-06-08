@@ -1,0 +1,30 @@
+---
+# HEADER SECTION
+ - name: This playbook will test forloop
+   hosts: webservers
+   vars:
+     myfiles: ['/opt/file1.txt', '/opt/file2.txt', '/opt/file3.txt']
+     mydir: ['webapp-1', 'webapp-2']
+
+# TASK SECTION
+   tasks:
+     - name: To create 3 files
+       file:
+         path: "{{ item }}"
+         state: file
+         mode: 0600
+       loop: "{{ myfiles }}"
+       ignore_errors: yes
+
+     - name: To create 2 directories
+       file:
+         path: /opt/{{ item }}
+         state: directory
+         mode: 0644
+         recurse: yes
+         owner: ubuntu
+         group: ubuntu
+       loop: "{{ mydir }}"
+
+# Learn Ignore errors
+#       ignore_errors: yes

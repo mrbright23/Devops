@@ -1,0 +1,23 @@
+---
+# This is my first playbook
+
+# HEADER SECTION
+ - name: This playbook will create a file
+   hosts: webservers
+   vars:
+     myname: Goutham
+     motd_value: "{{ lookup('file', '/etc/motd') }}"
+
+# TASK SECTION
+   tasks:
+     - name: This task gets executed when we run the tag install
+       debug:
+         var: myname
+       tags:
+       - install
+
+     - name: This task gets executed when we run the tag deploy
+       debug:
+         msg: "motd value is {{ motd_value }}"
+       tags:
+       - deploy

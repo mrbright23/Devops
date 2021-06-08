@@ -1,0 +1,16 @@
+---
+# This is my first playbook
+
+# HEADER SECTION
+ - name: This playbook will create a file
+   hosts: webservers
+
+# TASK SECTION
+   tasks:
+     - name: To create a folder using command module
+       script: /opt/abc.sh
+       args:
+         chdir: /opt
+
+     - name: To reboot a machine
+       reboot:

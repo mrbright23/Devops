@@ -1,0 +1,22 @@
+---
+# This Playbook will define vairables and use them across the code
+
+# HEADER SECTION
+ - name: This playbook will install a package and copy a file
+   hosts: webservers
+   vars:
+     mypackage: vim
+     myfile: helloworld.yaml
+
+# TASK SECTION
+   tasks:
+     - name: To install package named "{{ mypackage }}"
+       apt:
+         name: "{{ mypackage }}"
+         state: present
+
+     - name: To copy a file named "{{ myfile }}"
+       copy:
+         src: "/opt/{{ myfile }}"
+         dest: /opt/{{ myfile }}
+         mode: 0644

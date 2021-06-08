@@ -1,0 +1,17 @@
+---
+# This is my first playbook
+
+# HEADER SECTION
+ - name: This playbook will create a file
+   hosts: webservers
+
+# TASK SECTION
+   tasks:
+     - name: To Ensure abc.sh script runs every night at 01:15 AM
+       cron:
+         name: "Log Rotation"
+         hour: "01"
+         minute: "15"
+         job: "/opt/{{ script }}"
+         state: present
+

@@ -1,0 +1,15 @@
+---
+# This is my first playbook
+
+# HEADER SECTION
+ - name: This playbook will install a package
+   hosts: webservers
+   vars_files:
+     - myvariables.yml
+
+# TASK SECTION
+   tasks:
+     - name: To install package named "{{ mysoftware }}"
+       apt:
+         name: "{{ mysoftware }}"
+         state: present
