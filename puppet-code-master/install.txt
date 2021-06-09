@@ -1,0 +1,20 @@
+# Steps to Install Puppet Enterprise Server
+
+ cd /opt/
+ wget --content-disposition 'https://pm.puppet.com/cgi-bin/download.cgi?dist=ubuntu&rel=18.04&arch=amd64&ver=latest'
+ 
+ tar zxf puppet-enterprise-2019.8.4-ubuntu-18.04-amd64.tar.gz
+ 
+ cd puppet-enterprise-2019.8.4-ubuntu-18.04-amd64/
+ 
+ # Ensure hostname is set to public Ip Address
+ hostname
+ hostnamectl set-hostname ec2-3-237-37-71.compute-1.amazonaws.com
+ 
+ # Install Puppet
+ ./puppet-enterprise-installer
+ 
+ # Final Steps to be performed
+ puppet infrastructure console_password
+ puppet agent -t
+ puppet agent -t

@@ -1,0 +1,23 @@
+Instance ID
+i-081c21aefec37a6de
+Public DNS (IPv4)
+ec2-3-91-63-179.compute-1.amazonaws.com
+Instance state
+running
+IPv4 Public IP
+3.91.63.179
+Instance type
+t2.large
+IPv6 IPs
+-
+Finding
+Opt-in to AWS Compute Optimizer for recommendations. Learn more
+Elastic IPs
+Private DNS
+ip-172-31-76-237.ec2.internal
+Availability zone
+us-east-1f
+Private IPs
+172.31.76.237
+Security groups
+all ports open for learning. view inbound rules. view outbound rules
