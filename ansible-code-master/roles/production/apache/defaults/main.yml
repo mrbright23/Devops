@@ -1,7 +1,0 @@
----
-# defaults file for apache
-
-apache_port: 80
-apache_user: httpd
-apache_group: httpdadm
-apache_name: Goutham
